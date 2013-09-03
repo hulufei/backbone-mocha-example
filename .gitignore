@@ -6,6 +6,8 @@ out/
 out.zip
 src/js/vendor/
 
+test/assets/
+
 lib-cov
 *.seed
 *.log

@@ -67,6 +67,13 @@ module.exports = function(grunt) {
                 cwd: '<%= srcDir %>/pages/',
                 src: ['**/*.html'],
                 dest: '<%= buildDir %>/'
+            },
+
+            toTest: {
+                expand: true,
+                src: '<%= concat.vendor.dest %>',
+                dest: 'test/assets/',
+                flatten: true
             }
         },
 
@@ -179,9 +186,9 @@ module.exports = function(grunt) {
                 src: '<%= srcDir %>/<%= jsDir %>/app.js',
                 dest: '<%= buildDir %>/<%= jsDir %>/<%= jsAppName %>.js'
             },
-            test: {
+            toTest: {
                 src: '<%= srcDir %>/<%= jsDir %>/test/app.js',
-                dest: 'test/app.js'
+                dest: 'test/assets/app.js'
             }
         },
 
@@ -273,8 +280,8 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', [
         'connect',
-        'copy',
         'concat:vendor', 'browserify',
+        'copy',
         'jade',
         'stylus', 'autoprefixer',
         'watch'

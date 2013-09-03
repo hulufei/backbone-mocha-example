@@ -1,28 +1,25 @@
 /*global Backbone */
-var app = app || {};
+'use strict';
 
-app.todos = require('../collections/todos');
+var todos = require('../collections/todos');
 
-(function () {
-	'use strict';
+// Todo Router
+// ----------
+var TodoRouter = Backbone.Router.extend({
+    routes: {
+        '*filter': 'setFilter'
+    },
 
-	// Todo Router
-	// ----------
-	var TodoRouter = Backbone.Router.extend({
-		routes: {
-			'*filter': 'setFilter'
-		},
+    setFilter: function (param) {
+        // Set the current filter to be used
+        exports.TodoFilter = param || '';
 
-		setFilter: function (param) {
-			// Set the current filter to be used
-			exports.TodoFilter = param || '';
+        // Trigger a collection filter event, causing hiding/unhiding
+        // of Todo view items
+        todos.trigger('filter');
+    }
+});
 
-			// Trigger a collection filter event, causing hiding/unhiding
-			// of Todo view items
-			app.todos.trigger('filter');
-		}
-	});
+exports.TodoRouter = new TodoRouter();
 
-	exports.TodoRouter = new TodoRouter();
-	Backbone.history.start();
-})();
+Backbone.history.start();

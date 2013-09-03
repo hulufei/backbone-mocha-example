@@ -1,12 +1,8 @@
 /*global $ */
 /*jshint unused:false */
-var app = app || {};
+'use strict';
 
-app.AppView = require('./modules/views/app-view');
+var AppView = require('./modules/views/app-view');
 
-$(function () {
-	'use strict';
-
-	// kick things off by creating the `App`
-	new app.AppView();
-});
+// kick things off by creating the `App`
+new AppView();

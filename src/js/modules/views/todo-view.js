@@ -8,7 +8,7 @@
 	// --------------
 
 	// The DOM element for a todo item...
-	module.exports = Backbone.View.extend({
+	var TodoView = Backbone.View.extend({
 		//... is a list tag.
 		tagName:  'li',
 
@@ -91,4 +91,7 @@
 			this.model.destroy();
 		}
 	});
+
+    module.exports = TodoView;
+
 })(jQuery);

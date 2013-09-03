@@ -1,6 +1,8 @@
 /*global Backbone */
 var app = app || {};
 
+app.todos = require('../collections/todos');
+
 (function () {
 	'use strict';
 
@@ -13,7 +15,7 @@ var app = app || {};
 
 		setFilter: function (param) {
 			// Set the current filter to be used
-			app.TodoFilter = param || '';
+			exports.TodoFilter = param || '';
 
 			// Trigger a collection filter event, causing hiding/unhiding
 			// of Todo view items
@@ -21,6 +23,6 @@ var app = app || {};
 		}
 	});
 
-	app.TodoRouter = new TodoRouter();
+	exports.TodoRouter = new TodoRouter();
 	Backbone.history.start();
 })();

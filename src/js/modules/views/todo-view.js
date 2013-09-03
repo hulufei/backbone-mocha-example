@@ -1,14 +1,14 @@
 /*global Backbone, jQuery, _, ENTER_KEY */
-var app = app || {};
-
 (function ($) {
 	'use strict';
+
+    var router = require('../routers/router');
 
 	// Todo Item View
 	// --------------
 
 	// The DOM element for a todo item...
-	app.TodoView = Backbone.View.extend({
+	module.exports = Backbone.View.extend({
 		//... is a list tag.
 		tagName:  'li',
 
@@ -49,8 +49,8 @@ var app = app || {};
 		isHidden: function () {
 			var isCompleted = this.model.get('completed');
 			return (// hidden cases only
-				(!isCompleted && app.TodoFilter === 'completed') ||
-				(isCompleted && app.TodoFilter === 'active')
+				(!isCompleted && router.TodoFilter === 'completed') ||
+				(isCompleted && router.TodoFilter === 'active')
 			);
 		},
 
@@ -91,6 +91,4 @@ var app = app || {};
 			this.model.destroy();
 		}
 	});
-
-    module.exports = app.TodoView;
 })(jQuery);

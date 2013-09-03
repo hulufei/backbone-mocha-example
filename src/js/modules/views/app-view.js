@@ -3,6 +3,7 @@ var app = app || {};
 var ENTER_KEY = 13;
 
 app.todos = require('../collections/todos');
+app.TodoFilter = require('../routers/router').TodoFilter;
 app.TodoView = require('./todo-view');
 
 (function ($) {

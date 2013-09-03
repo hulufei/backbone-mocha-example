@@ -1,3 +1,11 @@
+*.DS_Store
+.idea/
+*.sublime-*
+node_modules/
+out/
+out.zip
+src/js/vendor/
+
 lib-cov
 *.seed
 *.log

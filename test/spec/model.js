@@ -6,7 +6,7 @@ describe('Tests for Todo model', function () {
         expect(Todo).to.be.exist;
     });
 
-    it('Can be created with default values for its attributes', function() {
+    it('should be created with default values for its attributes', function() {
         var todo = new Todo();
         expect(todo.get('title')).to.equal('');
     });

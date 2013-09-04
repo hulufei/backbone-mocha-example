@@ -2,6 +2,10 @@
 var app = app || {};
 var ENTER_KEY = 13;
 
+// brfs transform template into js string
+var fs = require('fs');
+var tpl = fs.readFileSync(__dirname + '/../../templates/stats.html');
+
 app.todos = require('../collections/todos');
 app.TodoFilter = require('../routers/router').TodoFilter;
 app.TodoView = require('./todo-view');
@@ -20,7 +24,7 @@ app.TodoView = require('./todo-view');
 		el: '#todoapp',
 
 		// Our template for the line of statistics at the bottom of the app.
-		statsTemplate: _.template($('#stats-template').html()),
+		statsTemplate: _.template(tpl),
 
 		// Delegated events for creating new items, and clearing completed ones.
 		events: {

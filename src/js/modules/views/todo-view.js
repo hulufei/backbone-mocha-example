@@ -3,6 +3,7 @@
 
 var router = require('../routers/router');
 
+// brfs transform template into js string
 var fs = require('fs');
 var tpl = fs.readFileSync(__dirname + '/../../templates/item.html');
 

@@ -176,7 +176,8 @@ module.exports = function(grunt) {
 
         browserify: {
             options: {
-                ignore: '<%= bower.directory %>/'
+                ignore: '<%= bower.directory %>/',
+                transform: ['brfs']
             },
             dist: {
                 options: {

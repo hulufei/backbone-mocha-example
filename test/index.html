@@ -24,6 +24,14 @@
     <script src="spec/collection.js"></script>
     <script src="spec/view.js"></script>
 
-    <script>mocha.run()</script>
+    <script>
+        // If tests run in a real browser
+        // Can alternatively do a check on window.PHANTOMJS
+        if (navigator.userAgent.indexOf('PhantomJS') < 0) {
+            mocha
+                // .globals(['Wombat', 'Apple']) // acceptable globals
+                .run();
+        }
+    </script>
 </body>
 </html>

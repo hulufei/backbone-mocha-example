@@ -24,12 +24,13 @@ module.exports = function(grunt) {
         imgDir: 'img',
         fontsDir: 'fonts',
         pagesDir: 'pages',
+        testDir: 'test',
 
         connect: {
             server: {
                 options: {
                     port: 9001,
-                    base: './out',
+                    base: './<%= buildDir %>',
                     middleware: function(connect, options) {
                         return [
                             require('connect-livereload')(),
@@ -72,7 +73,7 @@ module.exports = function(grunt) {
             toTest: {
                 expand: true,
                 src: '<%= concat.vendor.dest %>',
-                dest: 'test/assets/',
+                dest: '<%= testDir %>/assets/',
                 flatten: true
             }
         },
@@ -83,7 +84,7 @@ module.exports = function(grunt) {
                 log: true,
                 reporter: 'Spec'
             },
-            all: ['test/**/*.html']
+            all: ['<%= testDir %>/**/*.html']
         },
 
         jade: {
@@ -188,8 +189,8 @@ module.exports = function(grunt) {
                 dest: '<%= buildDir %>/<%= jsDir %>/<%= jsAppName %>.js'
             },
             toTest: {
-                src: '<%= srcDir %>/<%= jsDir %>/test/app.js',
-                dest: 'test/assets/app.js'
+                src: '<%= srcDir %>/<%= jsDir %>/<%= testDir %>/app.js',
+                dest: '<%= testDir %>/assets/app.js'
             }
         },
 

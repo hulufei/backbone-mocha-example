@@ -70,9 +70,7 @@ describe('Tests for TodoView', function () {
             expect(todoView.model.get('title')).to.be.equal('update todo');
         });
 
-        // FIXME: Won't pass in phantomJS, but passed in FF/Chrome, both ui
-        // test and spy test
-        it.skip('should remove item when enter empty in editing mode', function() {
+        it('should remove item when enter empty in editing mode', function() {
             var spy = sinon.spy(todoView.model, 'destroy');
 
             $('#todoList').find('label').trigger('dblclick');

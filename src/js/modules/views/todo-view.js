@@ -3,6 +3,8 @@
 
 var router = require('../routers/router');
 
+var ENTER_KEY = 13;
+
 // brfs transform template into js string
 var fs = require('fs');
 var tpl = fs.readFileSync(__dirname + '/../../templates/item.html');

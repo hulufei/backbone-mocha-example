@@ -1,4 +1,4 @@
-/*global describe, it, beforeEach, expect, sinon, todoList */
+/*global describe, it, beforeEach, expect, todoList */
 'use strict';
 
 describe('Tests for TodoList', function () {

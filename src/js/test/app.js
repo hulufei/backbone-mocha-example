@@ -3,3 +3,4 @@ window.TodoView = require('../modules/views/todo-view');
 window.AppView = require('../modules/views/app-view');
 // TodoList instance
 window.todoList = require('../modules/collections/todos');
+window.Router = require('../modules/routers/router');

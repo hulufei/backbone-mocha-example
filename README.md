@@ -43,7 +43,7 @@ browserify with [brfs](https://github.com/substack/brfs) transform.
 
 ### Tests
 
-`Mocha + Chai + Sinon`
+Mocha + Chai + Sinon
 
 `./src/js/test/app.js` exported global variables for testing(compiled to `./test/` by browserify).
 

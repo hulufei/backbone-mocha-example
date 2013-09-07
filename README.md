@@ -3,7 +3,7 @@ backbone-mocha-example
 
 [Backbone TodoMVC](http://todomvc.com/architecture-examples/backbone/) example with mocha tests based on a frontend boilerplate.
 
-Frontend boilerplate modified from [generator-frontend](https://github.com/nDmitry/generator-frontend)
+Frontend boilerplate modified from [generator-frontend](https://github.com/nDmitry/generator-frontend).
 
 ## Include
 
@@ -43,10 +43,9 @@ browserify with [brfs](https://github.com/substack/brfs) transform.
 
 ### Tests
 
-Mocha + Chai + Sinon
+`Mocha + Chai + Sinon`
 
-A source file exported global variables for testing, located under
-`src/js/test`(use browserify compiled to `test/`).
+`./src/js/test/app.js` exported global variables for testing(compiled to `./test/` by browserify).
 
 Run tests:
 

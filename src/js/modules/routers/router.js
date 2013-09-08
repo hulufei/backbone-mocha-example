@@ -20,6 +20,7 @@ var TodoRouter = Backbone.Router.extend({
     }
 });
 
-exports.TodoRouter = new TodoRouter();
+// TodoRouter instance
+exports.todoRouter = new TodoRouter();
 
 Backbone.history.start();

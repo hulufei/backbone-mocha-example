@@ -219,16 +219,11 @@ module.exports = function(grunt) {
             }
         },
 
-        pngmin: {
+        imagemin: {
             dist: {
-                options: {
-                    binary: '/usr/local/bin/pngquant',
-                    ext: '.png',
-                    force: true
-                },
                 expand: true,
                 cwd: '<%= buildDir %>/<%= imgDir %>/',
-                src: ['{,*/}*.png'],
+                src: ['{,*/}*.{png,jpg,jpeg,gif}'],
                 dest: '<%= buildDir %>/<%= imgDir %>/'
             }
         },
@@ -295,7 +290,7 @@ module.exports = function(grunt) {
         'jade',
         'csso',
         'clean:css', 'clean:js',
-        'pngmin'
+        'imagemin'
     ]);
 
 };
